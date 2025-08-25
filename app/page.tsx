@@ -1,12 +1,17 @@
-/** Add your relevant code here for the issue to reproduce */
-import { testRequest } from "./request";
+import Link from "next/link";
 
 export default async function Home() {
-  const responseData = await testRequest("https://api.github.com");
-
   return (
-    <div>
-      {JSON.stringify(responseData)}
-    </div>
+    <ul>
+      <li>
+        <Link href="/basic-auth">Basic Auth</Link>
+      </li>
+      <li>
+        <Link href="/decompress">Decompress</Link>
+      </li>
+      <li>
+        <Link href="/incorrect-headers">Incorrect Headers</Link>
+      </li>
+    </ul>
   );
 }
